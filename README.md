@@ -46,13 +46,13 @@ document: {
 }
 
 
-collection: notes
+collection: comments
 document: {
-    notes_id: Integer
-    notes_text: String
-    notes_topic_id: Integer Foreign Key to Topics table
-    notes_user: String
-    notes_date: Date
+    comment_id: Integer
+    comment_text: String
+    comment_topic_id: Integer Foreign Key to Topics table
+    comment_user: String
+    comment_date: Date
 }
 
 
@@ -65,6 +65,8 @@ document: {
     resources_topic_id: String Foreign Key to topics table
 }
 
+Used Mongosh to create the collection using the command: db.createCollection("sad-mongodb")
+The documents were auto created when inserting the seed data using the command: db.COLLECTION_Name.inserMany({})
 
 Developed by: Adrian Mitre, Travis Storie and Alex Aguirre
 
