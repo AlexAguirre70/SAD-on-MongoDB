@@ -5,7 +5,7 @@ This is a Educational sharing  software application written with React, Express 
 The app is for software development students to help them understand critical subjects, share comments, and resources. 
 
 |Users will be able to:|
------------------------
+|----------------------|
 | *Select a subject |
 | *Choose a topic on a particular subject and view comments and resources |
 | *add a comment on a specific topic |
@@ -35,14 +35,15 @@ Database: sad-mongodb
 
 |collection: subjects|
 |--------------------|
-|document: { |
-|subject_id: Integer|
-|    subject_name: String|
-|    subject_img_url: String |
-|} |
+document: { 
+subject_id: Integer
+    subject_name: String
+    subject_img_url: String 
+}
 
 
-collection: topics
+|collection: topics|
+|------------------|
 document: {
     topic_id: Integer
     topic_subject_id: Integer Foreign Key to subject table
@@ -50,7 +51,8 @@ document: {
 }
 
 
-collection: comments
+|collection: comments|
+|--------------------|
 document: {
     comment_id: Integer
     comment_text: String
@@ -60,7 +62,8 @@ document: {
 }
 
 
-collection: resources
+|collection: resources|
+|---------------------|
 document: {
     resources_id: Integer
     resources_name: String
