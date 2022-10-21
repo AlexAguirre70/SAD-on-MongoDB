@@ -15,7 +15,7 @@ app.use(express.static('public'))  // this use tell the server that for all stat
 app.use(express.urlencoded({extended: true})) // This will run the body parser for the form being submitted and encrypts the data being sent
 app.use(methodOverride('_method'))
 
-app.use('/topics',require('./controllers/topic-controller')) // The use method tells it that when the pathname is given '/places' in the URL to acess the router js file 
+app.use('/topics',require('./controllers/topic_controller')) // The use method tells it that when the pathname is given '/places' in the URL to acess the router js file 
 
 
 app.get('/',(req,res)=>{
