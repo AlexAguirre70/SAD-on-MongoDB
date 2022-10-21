@@ -6,8 +6,11 @@ require('dotenv').config() // includes the dotenv environment variables
 
 
 //middleware set views engine
+app.set("views", __dirname + "/views");
 app.set('view engine','jsx')  // the set method tells the server to set the view engine as the default for jsx type files
-app.engine('jsx', require('express-react-views').createEngine()) // the engine methods tell is that for all jsx extension file to use React views. the CreatEgine actually creates and intializes the view engine
+app.engine('jsx',require('express-react-views').createEngine()) // the engine methods tell is that for all jsx extension file to use React views. the CreatEgine actually creates and intializes the view engine
+app.use(express.static('public'))  // this use tell the server that for all static (non-dynamic info) to access the public folder
+
 
 
 

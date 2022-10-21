@@ -8,6 +8,8 @@ function index (data) {
       return (
         <div>
           <h2>{topic.name}</h2>
+          <h2>{topic.subtopic1}</h2>
+          <h2>{topic.subtopic2}</h2>
           <img src={topic.pic} alt={topic.name}/>
         </div>
       )
