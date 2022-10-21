@@ -1,7 +1,7 @@
 const router = require('express').Router()
 
 router.get('/', (req, res) => {
-    res.render('topics/index', {topics})
+    
     let topics = [{
         name: 'Magno',
         subtopic1: 'sub-1',
@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
         subtopic2: 'sub-4',
         pic: 'http://placekitten.com/250/250'
       }]
+      res.render('topics/index', {topics})
 })                                                   
 
 module.exports = router

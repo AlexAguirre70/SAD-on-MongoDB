@@ -1,4 +1,7 @@
 //TOPICS INDEX PAGE VIEW
+const React = require('react')  //This includes the React middleware to render views via the server
+
+const Def = require('../default') //This includes the default html views frameworks
 
 function index (data) {
     let topicsFormatted = data.topics.map((topic) => {
@@ -19,7 +22,7 @@ function index (data) {
   )
   }
   
-
+  module.exports = index  //This makes the view detail index page available 
   
 
   

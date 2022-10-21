@@ -9,7 +9,9 @@ function home () {
           <main>
               <h1>Software App For The Developer</h1>
               <div>     
-              
+              <img src="/images/riverr.jpg" alt="river" />
+              <img src="/images/space1.jpg" alt="space1" />
+              <img src="/images/space2.jpg" alt="space2" />
               </div>
               <p>
                 
