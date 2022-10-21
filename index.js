@@ -15,8 +15,7 @@ app.use('/topics', require('./controllers/topic_controllers')) // The use method
 
 
 app.get('/',(req,res)=>{
-    res.send('home Page')
-
+    res.render('home')
 }) //This is the default views GET path it tells it to render the home.jsx view whenever it is asked for the root '/' path
 
 
