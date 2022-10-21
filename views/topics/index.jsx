@@ -6,19 +6,27 @@ const Def = require('../default') //This includes the default html views framewo
 function index (data) {
     let topicsFormatted = data.topics.map((topic) => {
       return (
+      <div className='col-sm-6'>
         <div>
           <h2>{topic.name}</h2>
-          <h2>{topic.subtopic1}</h2>
-          <h2>{topic.subtopic2}</h2>
+          <p className="text-center">
+            {topic.subtopic1}
+          </p>
+          <p className="text-center">
+            {topic.subtopic2}
+          </p>
           <img src={topic.pic} alt={topic.name}/>
         </div>
+      </div>
       )
     })
     return (
       <Def>
           <main>
               <h1>TOPIC INDEX PAGE</h1>
+              <div className='row'>
               {topicsFormatted}
+              </div>
           </main>
       </Def>
   )
