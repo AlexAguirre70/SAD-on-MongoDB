@@ -30,11 +30,13 @@ The app is for software development students to help them understand critical su
 |GET         | /*                      |   404 page (matches any route not defined above |
 
 #  Cluster, Database, Collections  and Documents stored
-CLUSTER: SADMongoDB
-Database: sad-mongodb
+### CLUSTER: SADMongoDB
+### Database: sad-mongodb
 
-|collection: subjects|
+|collection|
 |--------------------|
+|subjects|
+
 document: { 
 subject_id: Integer
     subject_name: String
@@ -42,8 +44,10 @@ subject_id: Integer
 }
 
 
-|collection: topics|
-|------------------|
+|collection|
+|----------|
+| topics |
+
 document: {
     topic_id: Integer
     topic_subject_id: Integer Foreign Key to subject table
@@ -51,8 +55,10 @@ document: {
 }
 
 
-|collection: comments|
-|--------------------|
+|collection|
+|----------|
+|comments|
+
 document: {
     comment_id: Integer
     comment_text: String
@@ -62,8 +68,10 @@ document: {
 }
 
 
-|collection: resources|
-|---------------------|
+|collection|
+|----------|
+|resources|
+
 document: {
     resources_id: Integer
     resources_name: String
@@ -76,5 +84,3 @@ Used Mongosh to create the collection using the command: db.createCollection("sa
 The documents were auto created when inserting the seed data using the command: db.COLLECTION_Name.inserMany({})
 
 Developed by: Adrian Mitre, Travis Storie and Alex Aguirre
-
-
