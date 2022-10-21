@@ -9,14 +9,10 @@ function home () {
           <main>
               <h1>Software App For The Developer</h1>
               <div>     
-                <img src="/images/hall.jpg" alt="Hall" />
-                <img src="/images/river.jpg" alt="River" />
-                <img src="/images/spacer1.jpg" alt="Spece1" />
+              
               </div>
               <p>
-                <a href="/topics">
-                    <button className="btn-primary" id='placeBtn'> Topics Page</button>
-                </a>
+                
               </p>
           </main>
       </Def>
