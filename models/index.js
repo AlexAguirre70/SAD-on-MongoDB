@@ -8,3 +8,4 @@ mongoose.connect(process.env.MONGO_URI, {
 
 module.exports.Resources = require('./resources')
 module.exports.Comments = require('./comments')
+module.exports.Topics = require('./topics')
