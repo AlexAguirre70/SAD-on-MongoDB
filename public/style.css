@@ -1,3 +1,26 @@
+h1 {
+  text-align: center;
+  color: #ff6c2c;
+  margin-top: 15px;
+}
+
+button {
+  font-size: 1.25em;
+  font-weight: 500;
+  padding: 10px;
+  background-color: #ff6c2c;
+  color: white;
+  border-color: black;
+  border-radius: 8px;
+
+}
+
+img {
+  width: 300px;
+  height: 225px;
+  margin: 20px;
+  border-radius: 15px;
+}
 /*Simply added code from a previous exercise until we get more components to reference for CSS*/
 
 h1 {
@@ -168,5 +191,5 @@ div.rants{
     align-self: center;
     width: 150px;
     margin-left: 20px;
-    
+
 }
