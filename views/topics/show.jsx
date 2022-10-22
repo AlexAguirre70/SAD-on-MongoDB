@@ -14,7 +14,7 @@ function showTopic (data) {
                 </div>
                 <div className='col-sm-8'>
                 <h2>Let's share what we know about </h2>
-                <h1><strong>{data.subjects.subject_name}</strong></h1>
+                <h1><strong>{data.subject.subject_name}</strong></h1>
                 <h3>Choose a Topic Below</h3>
                 </div> 
                </div>
