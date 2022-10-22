@@ -1,24 +1,45 @@
-const React = require('react')  //Includes React in order to render jsx files in views
+const React = require('react') 
 
-const Def = require('./default')  //includes the default jsx file to provide the default jsx framework
+const Def = require('./default')
 
-// the function to pass the hmt js setup for the home page
 function home () {
     return (
       <Def>
           <main>
-              <h1>Software App For The Developer</h1>
-              <div>  
-              <img src="/images/space2.jpg" alt="space2"/>
-              </div>
-              <p>
-                <a href="/topics">
-                    <button className="btn-primary"> Topics Page</button>
-                </a> 
-              </p>
-          </main>
+            <div className='container'>
+              <div className='row'>
+                <div className='col-sm-2'>
+                 <img src='/images/senior-soft-dev.jpg' id='Senior'alt='Senior Software Developer'/> 
+                </div>
+                <div className='col-sm-8'>
+                <h1>Social Software Development Learning</h1>
+                <h3>made easy even for our geriatric community</h3>
+                </div> 
+               </div>
+            </div>               
+            <div className='container'>
+              <div className='row'>
+                <div className='col-sm'>  
+                <a href="/topics/63537cf04e544064a7ab60a7">
+                <img src="/images/node-med.jpg" alt="Learn Node.js"/>
+                </a>
+                </div>
+                <div className='col-sm'>  
+                <a href="/topics/63537d9f4e544064a7ab60a8">
+                <img src="/images/react-med.jpg" alt="Learn React"/>
+                </a>
+                </div>
+                <div className='col-sm'>  
+                <a href="/topics/63537e1a4e544064a7ab60a9">
+                <img src="/images/mongodb-med.jpg" alt="Learn React"/>
+                </a>
+                </div>
+              </div> 
+            </div>
+              <h2>Start Learning,Engaging and Contributing Your Favorite Resources</h2>
+            </main>
       </Def>
     )
   }
 
-module.exports = home   // This will export this module to be able to be used with other views  
+module.exports = home  
