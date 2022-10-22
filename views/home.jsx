@@ -20,17 +20,17 @@ function home () {
             <div className='container'>
               <div className='row'>
                 <div className='col-sm'>  
-                <a href="/topics/6350e5774e544064a7ab6088">
+                <a href="/topics/63537cf04e544064a7ab60a7">
                 <img src="/images/node-med.jpg" alt="Learn Node.js"/>
                 </a>
                 </div>
                 <div className='col-sm'>  
-                <a href="/topics/6350e5a74e544064a7ab6089">
+                <a href="/topics/63537d9f4e544064a7ab60a8">
                 <img src="/images/react-med.jpg" alt="Learn React"/>
                 </a>
                 </div>
                 <div className='col-sm'>  
-                <a href="/topics/6350e6434e544064a7ab608a">
+                <a href="/topics/63537e1a4e544064a7ab60a9">
                 <img src="/images/mongodb-med.jpg" alt="Learn React"/>
                 </a>
                 </div>
@@ -42,4 +42,4 @@ function home () {
     )
   }
 
-module.exports = home   // This will export this module to be able to be used with other views  
+module.exports = home  

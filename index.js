@@ -1,6 +1,7 @@
 const express= require('express')
 const app = express() 
 require('dotenv').config() 
+const { MongoClient } = require("mongodb");
 
 //middleware set views engine
 app.set("views", __dirname + "/views");
@@ -19,3 +20,4 @@ app.get('*',(req,res)=>{
 })
 
 app.listen(process.env.PORT)
+

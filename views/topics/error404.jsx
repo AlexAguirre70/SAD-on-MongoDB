@@ -8,8 +8,8 @@ function error404 () {
       <Def>
           <main>
               <div>
+              <img src="../images/error404-robot,jpg" id="robot" alt="confused robot error 404" />
               <h1>404: PAGE NOT FOUND</h1>
-               <img src="/images/mikhail-cat.jpg" alt="cat-lost" />
               <p>Oops, sorry, we can't find this page!</p>
               </div>
           </main>
