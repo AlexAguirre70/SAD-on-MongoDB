@@ -83,4 +83,6 @@ document: {
 Used Mongosh to create the collection using the command: db.createCollection("sad-mongodb")
 The documents were auto created when inserting the seed data using the command: db.COLLECTION_Name.inserMany({})
 
-Developed by: Adrian Mitre, Travis Storie and Alex Aguirre
+error-robot provided by [TopVectors](https://www.istockphoto.com/portfolio/TopVectors?mediatype=illustration)
+
+Developed by: [Adrian Mitre](https://github.com/Torinox89), [Travis Storie](https://github.com/TDub25) and [Alex Aguirre](https://github.com/AlexAguirre70)

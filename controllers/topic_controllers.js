@@ -1,19 +1,45 @@
 const router = require('express').Router()
 
+
 router.get('/', (req, res) => {
     
-    let topics = [{
-        name: 'Magno',
-        subtopic1: 'sub-1',
-        subtopic2: 'sub-2',
-        pic: 'http://placekitten.com/250/250'
-      }, {
-        name: 'Temper',
-        subtopic1: 'sub-3',
-        subtopic2: 'sub-4',
-        pic: 'http://placekitten.com/250/250'
-      }]
-      res.render('topics/index', {topics})
+      res.send('')
 })                                                   
 
+router.get('/topics', (req, res) => {
+    
+  res.send('')
+})
+router.get('/topics/:id', (req, res) => {
+    
+  res.send('')
+})
+router.post('/topics/:id/comments', (req, res) => {
+    
+  res.send('')
+})
+router.get('/resources/new', (req, res) => {
+    
+  res.send('')
+})
+router.get('/resources/:id', (req, res) => {
+    
+  res.send('')
+})
+router.get('/resources/:id/edit', (req, res) => {
+    
+  res.send('')
+})
+router.put('/resources/:id', (req, res) => {
+    
+  res.send('')
+})
+router.delete('/resources/:id', (req, res) => {
+    
+  res.send('')
+})
+router.get('/*', (req, res) => {
+    
+  res.send('')
+})
 module.exports = router
