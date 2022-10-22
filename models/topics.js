@@ -1,8 +1,9 @@
 const mongoose = require('mongoose')
 
 let topicsSchema = new mongoose.Schema({
-    key: Number,
-    name: {type:String, required: true},
+    topic_id: Number,
+    topic_subject_id:Number,
+    topic_name: String
 })
 
 module.exports = mongoose.model('Topics', topicsSchema)

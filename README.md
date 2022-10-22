@@ -18,8 +18,6 @@ The app is for software development students to help them understand critical su
 
 |Method      |Path                     |Purpose |
 |------------|-------------------------|---------------------------------------------|
-|GET         |/                        |  Home page |
-|GET         | /topics                 |   topics index page with links for content |
 |GET         | /topics/:id             |   content for a particular topic |
 |POST        | /topics/:id/comment     |   Create a comment about a particular topic |
 |GET         | /resources/new          |   Form page for creating a new resource |

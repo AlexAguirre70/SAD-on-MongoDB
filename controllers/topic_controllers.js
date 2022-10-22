@@ -1,20 +1,23 @@
 const router = require('express').Router()
+const db = require('../models')
 
+const subjects=require('../models/subjects')
+const topics =require('../models/topics')
 
-router.get('/', (req, res) => {
-    
-      res.send('')
-})                                                   
+router.get('/:id', (req, res) => {
+    db.Subjects.findById(req.params.id)
+    .populate('topics').exec()
 
-router.get('/topics', (req, res) => {
-    
-  res.send('')
+    .then((subject)=>{
+      res.render('topics/show',{subject})
+    }   
+    )
+    .catch(err=>{
+      res.render('error404')
+    }
+    )
 })
-router.get('/topics/:id', (req, res) => {
-    
-  res.send('')
-})
-router.post('/topics/:id/comments', (req, res) => {
+router.post('/:id/comments', (req, res) => {
     
   res.send('')
 })
@@ -38,8 +41,7 @@ router.delete('/resources/:id', (req, res) => {
     
   res.send('')
 })
-router.get('/*', (req, res) => {
-    
-  res.send('')
+router.get('/*', (req, res) => { 
+  res.render('error404')
 })
 module.exports = router
