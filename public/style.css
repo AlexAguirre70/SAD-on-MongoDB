@@ -1,29 +1,13 @@
-h1 {
-  text-align: center;
-  color: #ff6c2c;
-  margin-top: 15px;
-}
 
-button {
-  font-size: 1.25em;
-  font-weight: 500;
-  padding: 10px;
-  background-color: #ff6c2c;
-  color: white;
-  border-color: black;
-  border-radius: 8px;
-
-}
-
-img {
-  width: 300px;
-  height: 225px;
-  margin: 20px;
-  border-radius: 15px;
-}
 /*Simply added code from a previous exercise until we get more components to reference for CSS*/
 
 h1 {
+    text-align: center;
+    color: #ff6c2c;
+    margin-top: 15px;
+  }
+ 
+  h2 {
     text-align: center;
     color: #ff6c2c;
     margin-top: 15px;
@@ -48,12 +32,15 @@ div, p {
 }
 
 img {
-    width: 300px;
-    height: 225px;
+    width: 125px;
+    height: 125px;
     margin: 20px;
-    border-radius: 15px;
 }
-
+#Senior {
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+}
 nav {
     background-color: #ff6c2c;
     padding: 10px;
@@ -81,12 +68,6 @@ nav a:hover {
     text-decoration: none;
     background-color: white;
 }
-
-body {
-    background-color: lightgray;
-    text-align: center;
-  }
-  
   main {
     text-align: center;
     margin-right: 20px;
@@ -118,33 +99,7 @@ input[type=submit] {
     font-weight: 600;
     border-color: black;
 }
-div.detailpic{
-    display: inline-block;
-    width: 40%;
-    align-items: center;
-}
-div.info{
-    display: inline-block;
-    width: 40%;
-}
-div.rants{
-    margin-top: 25px;
-    display: inline-block;
-    width: auto;
-}
-#editSec{
-    display:inline-block;
-    max-height: 50px;
-   
-}
-#delBtn {
-    display: block;
-    background-color: red;
-    width: 100px;
-    padding: 5px;
-    margin: auto;
-      
-}
+
 #editBtn {
     display: block;
     background-color: #ff6c2c;
@@ -182,14 +137,4 @@ div.rants{
     border-style: solid;
     border-radius: 8px;
     width: 30%;
-}
-#rant{
-    margin-left: 10px;
-}
-#stars {
-    display: inline-block;
-    align-self: center;
-    width: 150px;
-    margin-left: 20px;
-
 }

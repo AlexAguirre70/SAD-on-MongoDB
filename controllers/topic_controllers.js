@@ -1,20 +1,11 @@
 const router = require('express').Router()
 
 
-router.get('/', (req, res) => {
+router.get('/:id', (req, res) => {
     
-      res.send('')
-})                                                   
-
-router.get('/topics', (req, res) => {
-    
-  res.send('')
+  res.send(`This is the specific topic for ID ${req.params.id}`)
 })
-router.get('/topics/:id', (req, res) => {
-    
-  res.send('')
-})
-router.post('/topics/:id/comments', (req, res) => {
+router.post('/:id/comments', (req, res) => {
     
   res.send('')
 })
