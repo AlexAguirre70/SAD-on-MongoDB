@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const {Schema} = mongoose
 
 let subjectsSchema = new mongoose.Schema({
     _id: mongoose.ObjectId,
@@ -10,5 +11,5 @@ let subjectsSchema = new mongoose.Schema({
     resources:[{type:mongoose.Schema.Types.ObjectId,ref:'Resources'}]
 
 })
-
-module.exports = mongoose.model('Subjects', subjectsSchema)
+const Subjects=mongoose.model('Subjects', subjectsSchema)
+module.exports = Subjects
