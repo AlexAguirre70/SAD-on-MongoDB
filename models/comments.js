@@ -7,6 +7,7 @@ const commentSchema = new Schema({
     comment_topic_id: Number,
     comment_user: {type:String, default:'Anonymous'},
     comment_date: {type:Date, default: Date.now()},
+    comment_subject:{type:Schema.Types.ObjectID, ref:'Subjects'}
 })
 const Comments=mongoose.model('Comments', subjectsSchema)
 module.exports = Comments
