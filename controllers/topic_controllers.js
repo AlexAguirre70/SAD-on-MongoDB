@@ -39,6 +39,7 @@ router.get('/:id', (req, res) => {
     }
     )
 })
+/*This will add the comment to the comments collection and redirect back to the Show view*/   
 router.post('/:id/comments', (req, res) => {
     
   res.send(`Topics Comments PostPage for ID ${id}`)
@@ -49,10 +50,8 @@ router.get('/:id/resources/:rid', (req, res) => {
   res.send(`Get Show all Resources for ${req.params.id}`)
 })  
 router.get('/:id/resources/new', (req, res) => {
-    
-    res.send(`Get Add New Resource form`)
+    res.render(`Get Add New Resource form`)
 })    
-
 router.get('/:id/resources/:rid/edit', (req, res) => {
     
     res.send(`Get Path to Edie the resources for id ${req.params.id}`)
