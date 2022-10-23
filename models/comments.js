@@ -9,5 +9,5 @@ const commentSchema = new Schema({
     comment_date: {type:Date, default: Date.now()},
     comment_subject:{type:Schema.Types.ObjectID, ref:'Subjects'}
 })
-const Comments=mongoose.model('Comments', subjectsSchema)
-module.exports = Comments
+
+module.exports = mongoose.model('Comments', commentSchema)

@@ -1,65 +1,51 @@
 const router = require('express').Router()
 const db = require('../models')
 
+
 const subjects=require('../models/subjects')
 const topics =require('../models/topics')
 
-var subjectId=0
-var subjectName=''
+
+var topicId=0
 var subjectTopics=[]
-var subjectCommnents=[]
-var subjectResources= []
+var subjectComments=[]
+var subjectResources=[]
 
-router.get('/:id', (req, res) => {
-   return db.Subjects.findById(req.params.id)
-      .then((res)=>{
-       subjectId=res.subject_id
-       subjectName=res.subject_name
-       console.log(subjectId,subjectName)
-      /*res.render('topics/show',{subjectId,subjectName})*/
-       return db.Topics.find({topic_subject_id: subject_id})
+//find the topics for each subject into an array
+router.get('/:name', (req, res) => {
+  var subjectName=req.params.name
+   db.Topics.find({topic_subject:req.params.name})
+  .then(Topic=>{
+     
+        res.render('topics/index',{Topic,subjectName})
     })
-    .then(res=>{
-       subjectTopics=res.body
-       console.log(subjectTopics)
-       return db.Resources.find({resources_subect_id:topic_subject_id})
-   })
-    .then(res=>{
-       subjectResources=res.body
-       console.log(subjectResources)
-       return db.Comments.find({comments_subect_id:resources_subject_id})
-   })
-    .then(res=>{
-       subjectComments=res.body
-       console.log(subjectComments)
-       res.render('topics/show',{subjectId,subjectName,subjectTopics,subjectResources,subjectComments}     
-   })
-      .catch(err=>{
+    .catch(err=>{
+      console.log(err)
       res.render('error404')
-    }
-    )
+    })
 })
-/*This will add the comment to the comments collection and redirect back to the Show view*/   
-router.post('/:id/comments', (req, res) => {
-    
-  res.send(`Topics Comments PostPage for ID ${id}`)
+//router.GET On Topic Click render the topic comments, and resources Topics SHOW View
+router.get('/:name/:topic/:id',(req,res)=>{
+    var subjectName=req.params.name
+    var topicName=req.params.topic
+    res.render('topics/show',{subjectName,topicName})
+})
+//router.POST: On click Add Comment form - add to the database
+router.post('/:id/:topicName/comment', (req,res) => {
+  db.Comments.create(req.body)
+  .then()
+  .catch()
+})
+//router.POST: On click Add Resource form - add to the database
+router.post('//:id/:topicName/resource', (req, res) => {
+  db.Resources.create(req.body)
+  .then()
+  .catch()
+})
+//router.PUT: render the edit page to edit a specific resource 
 
-})
-router.get('/:id/resources/:rid', (req, res) => {
-    
-  res.send(`Get Show all Resources for ${req.params.id}`)
-})  
-router.get('/:id/resources/new', (req, res) => {
-    res.render(`Get Add New Resource form`)
-})    
-router.get('/:id/resources/:rid/edit', (req, res) => {
-    
-    res.send(`Get Path to Edie the resources for id ${req.params.id}`)
-})    
-router.delete('/:id/resources/:rid', (req, res) => {
-    
-  res.send(`Delete Resource Route for ID ${req.params.id}`)
-})
+//router.DELETE: when the delete button is clicked on the resources 
+
 router.get('/*', (req, res) => { 
   res.render('error404')
 })

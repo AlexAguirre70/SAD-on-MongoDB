@@ -20,17 +20,17 @@ function home () {
             <div className='container'>
               <div className='row'>
                 <div className='col-sm'>  
-                <a href="/topics/63537cf04e544064a7ab60a7">
+                <a href="/topics/Node.js">
                 <img src="/images/node-med.jpg" alt="Learn Node.js"/>
                 </a>
                 </div>
                 <div className='col-sm'>  
-                <a href="/topics/63537d9f4e544064a7ab60a8">
+                <a href="/topics/React">
                 <img src="/images/react-med.jpg" alt="Learn React"/>
                 </a>
                 </div>
                 <div className='col-sm'>  
-                <a href="/topics/63537e1a4e544064a7ab60a9">
+                <a href="/topics/MongoDB">
                 <img src="/images/mongodb-med.jpg" alt="Learn React"/>
                 </a>
                 </div>

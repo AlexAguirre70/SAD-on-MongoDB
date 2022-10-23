@@ -7,5 +7,5 @@ const subjectsSchema = new Schema({
     subject_name: {type:String, required: true},
     subject_img_url:{type:String, required: true}
 })
-const Subjects=mongoose.model('Subjects', subjectsSchema)
-module.exports = Subjects
+
+module.exports = mongoose.model('Subjects', subjectsSchema)

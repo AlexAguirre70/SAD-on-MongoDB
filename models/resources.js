@@ -8,5 +8,5 @@ const resourcesSchema = new Schema({
     resources_topic_id: Number,
     resources_subjects:{type:Schema.Types.ObjectID, ref:'Subjects'}
 })
-const Resources=mongoose.model('Resources', resourcesSchema)
-module.exports = Resources
+
+module.exports = mongoose.model('Resources', resourcesSchema)
