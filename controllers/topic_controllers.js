@@ -4,11 +4,13 @@ const db = require('../models')
 const subjects=require('../models/subjects')
 const topics =require('../models/topics')
 
+var subjectTopics=[]
+var subjectCommnets=[]
+var sujectResources= []
+
 router.get('/:id', (req, res) => {
     db.Subjects.findById(req.params.id)
-    .populate('topics').exec()
-
-    .then((subject)=>{
+      .then((subject)=>{
       res.render('topics/show',{subject})
     }   
     )
@@ -19,27 +21,29 @@ router.get('/:id', (req, res) => {
 })
 router.post('/:id/comments', (req, res) => {
     
-  res.send('')
+  res.send(`Topics Comments PostPage for ID ${id}`)
+
 })
-router.get('/resources/new', (req, res) => {
+router.get('/:id/resources/:rid', (req, res) => {
     
-  res.send('')
+  res.send(`Get Show all Resources for ${req.params.id}`)
 })
-router.get('/resources/:id', (req, res) => {
+router.get('/:id/resources/new', (req, res) => {
     
-  res.send('')
+    res.send(`Get Add New Resource form`)
 })
-router.get('/resources/:id/edit', (req, res) => {
+
+router.get('/:id/resources/:rid/edit', (req, res) => {
     
-  res.send('')
+    res.send(`Get Path to Edie the resources for id ${req.params.id}`)
 })
-router.put('/resources/:id', (req, res) => {
+router.put('/:id/resources/:rid', (req, res) => {
     
-  res.send('')
+  res.send(`Update PUT Route for the Resource for ID ${req.params.id}`)
 })
-router.delete('/resources/:id', (req, res) => {
+router.delete('/:id/resources/:rid', (req, res) => {
     
-  res.send('')
+  res.send(`Delete Resource Route for ID ${req.params.id}`)
 })
 router.get('/*', (req, res) => { 
   res.render('error404')
