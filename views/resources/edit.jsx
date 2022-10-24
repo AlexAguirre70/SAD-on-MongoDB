@@ -1,8 +1,31 @@
-const React = require('react') 
+import React,{useState} from'react' 
 const Def = require('../default')  
 
 
 function editResource(data) {
+    const [input,setInput]=useState({
+        resources_name:data.resource.resources_name,
+        resources_type:data.resource.resources_type,
+        resources_link:data.resource.resources_link,
+        resources_id: data.resource.resource_id,
+        resources_topic_id: data.topicId
+    })
+    
+    function handleChange(e){
+        const {name,value}=e.target;
+
+        setInput(prevInput =>{
+            return{
+                ...prevInput,
+                [name]:value
+            }
+        })
+
+    }
+    function handleSubmit(e){
+        e.preventDefault;
+        console.log(input)
+    }
     return (
       <Def>
          <head>
@@ -12,25 +35,25 @@ function editResource(data) {
           <main>
           <h2>Editing the {data.subjectName} {data.topicName} Resource</h2>
                 <h3>{data.resource.resources_name}</h3>
-            <form method='POST' action={`/topics/${data.subjectName}/${data.topicName}/${data.topicId}/resources/${data.resource.resources_id}?_method=PUT`}>
+            <form>
             <div className='row'>    
                 <div className='form-group col-sm-6'>
-                    <label htmlFor='resourceName'>Resource Name</label>
-                    <input className='form-control' id='name' name="resourceName" defaultValue={`${data.resource.resources_name}`}  />
-                </div>
+                    <label htmlFor='resources_name'>Resource Name</label>
+                    <input om className='form-control' id='resources_name' name="resources_name" value={input.resources_name}  />
+                </div> 
                 <div className='form-group col-sm-6'>
-                    <label htmlFor='resourceType'>Resource Type</label>
-                    <input  className='form-control'  id='rType' name='resourceType' defaultValue={`${data.resource.resources_type}`}/>
+                    <label htmlFor='resources_type'>Resource Type</label>
+                    <input className='form-control'  id='resource_type' name='resources_type' value={input.resources_type}/>
                 </div>             
             </div>    
             <div className='row'>
                 <div className='form-group col-sm-6'>
-                  <label   htmlFor='resourceLink'>Resource Link</label>
-                 <input className='form-control'  id='Rlink' name='resourceLink' defaultValue={`${data.resource.resources_link}`}/>
+                  <label   htmlFor='resources_link'>Resource Link</label>
+                 <input  className='form-control'  id='resources_link' name='resources_link' value={input.resources_link}/>
                 </div>
             </div>    
                 <div className='form-group'>
-                    <button type='submit'  className='btn btn-primary' >Submit Changes</button>
+                    <button  type='submit'  className='btn btn-primary' >Submit Changes</button>
                 </div>
             </form>
           </main>
