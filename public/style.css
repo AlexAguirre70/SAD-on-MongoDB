@@ -12,14 +12,19 @@ h1 {
     color: #ff6c2c;
     margin-top: 15px;
   }
+  h5 {
+    padding: 10px;
+  }
 button {
-    font-size: 1.25em;
+    font-size: 1em;
     font-weight: 500;
     padding: 10px;
     background-color: #ff6c2c;
     color: white;
     border-color: black;
     border-radius: 8px;
+    width: 250px;
+    margin:10px;
 
 }
 button:hover {
@@ -100,11 +105,15 @@ input[type=submit] {
     border-color: black;
 }
 
+#resBtn {
+    padding: 5px;
+    max-height: 40px;
+    font-weight: 600;
+    margin: auto;
+
+}
 #editBtn {
-    display: block;
-    background-color: #ff6c2c;
-    border-color: black;
-    color: white;
+    
     width: 100px;
     padding: 5px;
     max-height: 40px;
@@ -112,20 +121,16 @@ input[type=submit] {
     margin: auto;
 
 }
-#addBtn, #placeBtn, #saveBtn {
-    margin-bottom: 20px;
-}
-#newCmtBtn {
-    display: block;
-    background-color: #ff6c2c;
-    border-color: black;
-    color: white;
-    width: 200px;
+
+#delBtn {
     padding: 5px;
     max-height: 40px;
     font-weight: 600;
     margin: auto;
 
+}
+#addBtn, #resBtn, #saveBtn {
+    margin-bottom: 20px;
 }
 .borderbox{
     display: inline-flex;

@@ -15,13 +15,13 @@ function Def (html) {
                     <a href="/">Home</a>
                     </li>
                     <li>
-                    <a href="/topics/63537cf04e544064a7ab60a7">Node.js</a>
+                    <a href="/topics/Node.JS">Node.js</a>
                     </li>
                     <li>
-                    <a href="/topics/63537d9f4e544064a7ab60a8">React</a>
+                    <a href="/topics/React">React</a>
                     </li>
                     <li>
-                    <a href="/topics/63537e1a4e544064a7ab60a9">MongoDB</a>
+                    <a href="/topics/MongoDB">MongoDB</a>
                     </li>
                 </ul>
                 </nav>
