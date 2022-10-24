@@ -6,7 +6,7 @@ const resourcesSchema = new Schema({
     resources_link: {type:String, required: true},
     resources_type: {type:String, default: 'Online Guide'},
     resources_topic_id: Number,
-    resources_subjects:{type:Schema.Types.ObjectID, ref:'Subjects'}
+    resources_topics:{type:Schema.Types.ObjectID, ref:'Topics'}
 })
 
 module.exports = mongoose.model('Resources', resourcesSchema)

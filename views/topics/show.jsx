@@ -2,6 +2,25 @@ const React = require('react')
 const Def = require('../default')
 
 function showTopics (data) {
+  let resourcesFormatted = data.resources.map((resources)=>{
+    return(
+
+    <div className='row' key={resources.resources_id}>
+        <div className='border border-dark col-sm-3 rounded'>
+            <h5>{resources.resources_name}</h5>
+            <p><strong>Resource Type:</strong> {resources.resources_type}</p>
+            <p><a href={`${resources.resources_link}`}>{resources.resources_link}</a>
+          </p>
+              <a href={`/topics/${data.subjectName}/${data.topicName}/resources/${resources.resources_id}`}>               
+               <button type='submit' className='btn btn-outline-primary'>Edit</button>
+              </a>        
+                <form className='formBtn' method='POST' action={`topics/${data.subjectName}/${data.topicName}/${resources.resources_id}`}>
+                <button type='submit' className='btn btn-outline-danger'>Delete</button>
+              </form>    
+        </div>
+    </div>
+  ) 
+  })
     return ( 
       <Def>
           <head>
@@ -11,15 +30,17 @@ function showTopics (data) {
           </head>
           <main>
             <h1>{data.subjectName} - {data.topicName}</h1>
-            <button id='btn btn-light'href={`/topics/${data.subjectName}`}>Explore Another {data.subjectName} Topic</button>
+            <a href={`/topics/${data.subjectName}`}>
+            <button className='btn btn-outline-secondary'>Explore Another {data.subjectName} Topic</button>
+            </a>
           <section>
-          <h2>Resources:</h2> 
-            <button className='btn btn-primary'>Edit</button>
-            <button className='btn btn-danger'>Delete</button>
-            
+          <h2>Resources:</h2>
+          <div className='containter'>
+            {resourcesFormatted} 
+         </div>             
           </section>        
           <section>
-            <h1>Add Resource Form:</h1>
+            <h2>Add Resource Form:</h2>
              </section>
             </main>
       </Def>

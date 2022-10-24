@@ -28,16 +28,29 @@ router.get('/:name', (req, res) => {
 router.get('/:name/:topic/:id',(req,res)=>{
     var subjectName=req.params.name
     var topicName=req.params.topic
-    res.render('topics/show',{subjectName,topicName})
+    db.Resources.find({resources_topic_id:req.params.id})
+    .then(resources=>{
+        console.log(resources)
+        res.render('topics/show',{resources,subjectName,topicName})
+      })
+    .catch(err=>{
+      console.log(err)
+      res.render('error404')
+    })
 })
-//router.POST: On click Add Comment form - add to the database
-router.post('/:id/:topicName/comment', (req,res) => {
-  db.Comments.create(req.body)
-  .then()
-  .catch()
-})
+
+
+// router.GET  Get the update form
+router.get('/:name/:topicName/resources/:rid',(req,res)=>
+    res.render('resources/edit')
+)
+
+
+
+
+
 //router.POST: On click Add Resource form - add to the database
-router.post('//:id/:topicName/resource', (req, res) => {
+router.post('/:id/:topicName/resource', (req, res) => {
   db.Resources.create(req.body)
   .then()
   .catch()

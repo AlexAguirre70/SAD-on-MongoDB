@@ -12,6 +12,9 @@ h1 {
     color: #ff6c2c;
     margin-top: 15px;
   }
+  h5 {
+    padding: 10px;
+  }
 button {
     font-size: 1em;
     font-weight: 500;
