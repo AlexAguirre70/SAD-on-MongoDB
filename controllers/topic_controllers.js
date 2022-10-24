@@ -6,11 +6,6 @@ const subjects=require('../models/subjects')
 const topics =require('../models/topics')
 
 
-var topicId=0
-var subjectTopics=[]
-var subjectComments=[]
-var subjectResources=[]
-
 //find the topics for each subject into an array
 router.get('/:name', (req, res) => {
   var subjectName=req.params.name
@@ -41,10 +36,19 @@ router.get('/:name/:topic/:id',(req,res)=>{
 
 
 // router.GET  Get the update form
-router.get('/:name/:topicName/resources/:rid',(req,res)=>
-    res.render('resources/edit')
-)
-
+router.get('/:name/:topic/:id/resources/:rid',(req,res)=>{
+  var subjectName=req.params.name
+  var topicName=req.params.topic
+  var topicId=req.params.id
+  db.Resources.findOne({resources_id:req.params.rid})
+  .then(resource=>{
+      res.render('resources/edit',{resource,subjectName,topicName,topicId})
+  })
+  .catch(err=>{
+    console.log(err)
+    res.render('error404')
+  })
+})
 
 
 

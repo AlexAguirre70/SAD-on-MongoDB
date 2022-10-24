@@ -11,7 +11,7 @@ function showTopics (data) {
             <p><strong>Resource Type:</strong> {resources.resources_type}</p>
             <p><a href={`${resources.resources_link}`}>{resources.resources_link}</a>
           </p>
-              <a href={`/topics/${data.subjectName}/${data.topicName}/resources/${resources.resources_id}`}>               
+              <a href={`/topics/${data.subjectName}/${data.topicName}/${resources.resources_topic_id}/resources/${resources.resources_id}`}>               
                <button type='submit' className='btn btn-outline-primary'>Edit</button>
               </a>        
                 <form className='formBtn' method='POST' action={`topics/${data.subjectName}/${data.topicName}/${resources.resources_id}`}>
