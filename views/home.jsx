@@ -20,7 +20,7 @@ function home () {
             <div className='container'>
               <div className='row'>
                 <div className='col-sm'>  
-                <a href="/topics/Node.js">
+                <a href="/topics/Node.JS">
                 <img src="/images/node-med.jpg" alt="Learn Node.js"/>
                 </a>
                 </div>
