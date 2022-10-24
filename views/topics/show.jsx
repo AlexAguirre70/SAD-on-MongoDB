@@ -40,25 +40,29 @@ function showTopicRes (data) {
           </section>        
           <section>
             <h2>Add Resource Form:</h2>
-            <form method='POST' action={`/topics/${data.subjectName}/${data.topicName}/${data.resources.resources_topic_id}/resources/`}>
+            <form method='POST' action={`/topics/${data.subjectName}/${data.topicName}/${data.topicId}/resources/`}>
             <div className='row'>    
                 <div className='form-group col-sm-6'>
-                    <label htmlFor='resource_name'>Resource Name</label>
-                    <input className='form-control' id='name' name="resource_name"/>
+                    <label htmlFor='resources_name'>Resource Name</label>
+                    <input className='form-control' id='resources_name' name="resources_name"/>
                 </div>
                 <div className='form-group col-sm-6'>
-                    <label htmlFor='resource_type'>Resource Type</label>
-                    <input  className='form-control' id='rType' name='resource_type' />
+                    <label htmlFor='resources_type'>Resource Type</label>
+                    <input  className='form-control' id='resources_type' name='resources_type' />
                 </div>             
             </div>    
             <div className='row'>
                 <div className='form-group col-sm-6'>
-                  <label   htmlFor='resource_link'>Resource Link</label>
-                 <input className='form-control'  id='Rlink' name='resource_link'/>
+                  <label   htmlFor='resources_link'>Resource Link</label>
+                 <input className='form-control'  id='resources_link' name='resources_link'/>
                 </div>
                 <div className='form-group col-sm-6'>
-                  <label   htmlFor='resource_topic_id'>Topic ID</label>
-                 <input className='form-control'  id='resTopicId' name='resource_topic_id' defaultValue={data.topicId} readOnly={true}/>
+                  <label   htmlFor='resources_topic_id'>Topic ID</label>
+                 <input className='form-control'  id='resources_topic_id' name='resources_topic_id' defaultValue={data.topicId} readOnly={true}/>
+                </div>
+                <div className='form-group col-sm-6'>
+                  <label   htmlFor='resources_id'>Topic ID</label>
+                 <input className='form-control'  id='resources_id' name='resources_id' defaultValue={0} readOnly={true}/>
                 </div>
             </div>    
                 <div className='form-group'>
