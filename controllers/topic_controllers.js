@@ -1,14 +1,15 @@
 const router = require('express').Router()
+const express = require('express')
+
 const db = require('../models')
 const methodOverride = require('method-override')
-var bodyParser = require('body-parser')
-
-var jsonParser = bodyParser.json()
-
 
 const subjects=require('../models/subjects')
 const topics =require('../models/topics')
+const resources =require('../models/resources')
+
 router.use(methodOverride('_method'))
+router.use(express.json())
 
 //find the topics for each subject into an array
 router.get('/:name', (req, res) => {
@@ -24,12 +25,13 @@ router.get('/:name', (req, res) => {
     })
 })
 // router.Put this will update the record in MongoDB
-router.put('/:name/:topic/:id/resources/:rid',jsonParser,(req,res)=>{
+router.put('/:name/:topic/:id/resources/:rid',(req,res)=>{
   var subjectName=req.params.name
   var topicName=req.params.topic
   var topicId=req.params.id  
 
-  db.Resources.findOneAndUpdate({resources_id:req.params.rid},{$set:{resources_name:'Test4'}})
+  db.Resources.findOneAndUpdate({resources_id:req.params.rid},req.body)
+   .save()
    .then(result=>{
    
       res.redirect(`/topics/${subjectName}/${topicName}/${topicId}`)
@@ -76,28 +78,12 @@ router.get('/:name/:topic/:id/resources/:rid',(req,res)=>{
 })
 
 //router.POST: On click Add Resource form - add to the database
-router.post('/:name/:topic/:id/resources',jsonParser,(req,res)=>{
-  if(req.body.resources_id<1){
-  
-    db.Resources.countDocuments({})
-      .then((count)=>{
-        console.log(count)
-        req.body.resources_id=count+1
-        return req.body.resources_id
-      })
-      .catch(err=>{
-        console.log(err)
-        res.render('error404')
-      })
-    }
-    db.Resources.create(req.body)
-    .then(
-      res.redirect(`/topics/${subjectName}/${topicName}/${topicId}`)
-    )
-    .catch(err=>{
-      console.log(err)
-      res.render('error404')
-    })
+router.post('/:name/:topic/:id/resources',(req,res)=>{
+  var subjectName=req.params.name
+  var topicName=req.params.topic
+  var topicId=req.params.id
+    
+   res.send(`this is the PUT ROUTE and data being passed ${req.body.resources_id}` )
 })
 
 //router.PUT: render the edit page to edit a specific resource 
