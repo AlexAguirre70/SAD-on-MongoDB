@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
+const {Schema} = mongoose
 
-let subjectsSchema = new mongoose.Schema({
+const subjectsSchema = new Schema({
     _id: mongoose.ObjectId,
     subject_id: Number,
     subject_name: {type:String, required: true},
