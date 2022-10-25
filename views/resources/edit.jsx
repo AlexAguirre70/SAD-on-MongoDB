@@ -10,9 +10,9 @@ function editResource(data) {
                 <link rel="stylesheet" href="../../../../../style.css"/>
           </head>
           <main>
-          <h2>Editing the {data.subjectName} {data.topicName} Resource</h2>
-                <h3>{data.resource.resources_name}</h3>
-            <form>
+          <h1>Editing the {data.topicName} Resource</h1>
+                <h2>{data.resource.resources_name}</h2>
+            <form method='POST' action={`/topics/${data.subjectName}/${data.topicName}/${data.topicId}/resources/${data.resource.resources_id}?_method=PUT`}  encType="application/x-www-form-urlencoded">
             <div className='row'>    
                 <div className='form-group col-sm-6'>
                     <label htmlFor='resources_name'>Resource Name</label>
@@ -39,10 +39,8 @@ function editResource(data) {
                   <input  className='form-control'  id='resources_topic_id' name='resources_topic_id' defaultValue={data.resource.resources_topic_id} key={true} readOnly={true}/>
                 </div>
             </div>      
-            <div className='row'>
-                <div className='form-group col-sm-6'>
-                <button className='form-control' type='submit'  className='btn btn-primary' >Submit Changes</button>
-                </div>
+            <div className='row' >     
+                <button className='button' type='submit' >Submit Changes</button>
             </div>    
             </form>
           </main>

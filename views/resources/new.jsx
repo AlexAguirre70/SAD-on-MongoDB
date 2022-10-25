@@ -16,17 +16,7 @@ function newresource(data){
 
         </div>   
         <div className='container'>
-            <form method='POST' action={`/topics/${data.subjectName}/${data.topicName}/${data.topicId}/resources/`} encType="application/x-www-form-urlencoded">
-            <div className='row'>    
-                <div className='form-group col-sm-6'>
-                    <label htmlFor='subject_name'>Subject</label>
-                    <input className='form-control' id='subject_name' name="subject_name" defaultValue={data.subjectName} readOnly={true}/>
-                </div>
-                <div className='form-group col-sm-6'>
-                    <label htmlFor='resources_type'></label>
-                    <input  className='form-control' id='topic_name' name='topic_name' defaultValue={data.topicName} readOnly={true}/>
-                </div>             
-            </div>       
+            <form method='POST' action={`/topics/${data.subjectName}/${data.topicName}/${data.topicId}/resources/`} encType="application/x-www-form-urlencoded">    
             <div className='row'>    
                 <div className='form-group col-sm-6'>
                     <label htmlFor='resources_name'>Resource Name</label>

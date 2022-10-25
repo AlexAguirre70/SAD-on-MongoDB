@@ -57,8 +57,19 @@ router.post('/:name/:topic/:id/resources',(req,res)=>{
   var subjectName=req.params.name
   var topicName=req.params.topic
   var topicId=req.params.id
-  
-})
+  db.Resources.create(req.body)
+  .then(insert => {
+        insert.save()
+        .then(()=>{
+            res.redirect(`/topics/${subjectName}/${topicName}/${topicId}`)
+          })
+      })
+   .catch(err=>{
+      console.log(err)
+      res.render('error404')
+    })
+})    
+      
 
 //Resources - RENDER - EDIT New Form
 router.get('/:name/:topic/:id/resources/:rid',(req,res)=>{
@@ -82,8 +93,7 @@ router.put('/:name/:topic/:id/resources/:rid',(req,res)=>{
   var topicName=req.params.topic
   var topicId=req.params.id  
   console.log(req.body)
-  db.Resources.findOneAndUpdate({$and:[{resources_id:req.params.rid},{resources_topic_id:topicName}]}, req.body)
-   .save()
+  db.Resources.findOneAndUpdate({$and:[{resources_id:req.params.rid},{resources_topic_id:topicId}]}, req.body)
    .then(result=>{
    
       res.redirect(`/topics/${subjectName}/${topicName}/${topicId}`)
@@ -112,4 +122,5 @@ router.delete('/:name/:topic/:id/resources/:rid',(req,res)=>{
 router.get('/*', (req, res) => { 
   res.render('error404')
 })
+
 module.exports = router

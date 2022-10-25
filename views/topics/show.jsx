@@ -27,25 +27,24 @@ function showTopicRes (data) {
                 <link rel="stylesheet" href="../../../style.css"/>
           </head>
           <main>
-            <section>
+          <section>
             <h1>{data.subjectName} - {data.topicName}</h1>
             <a href={`/topics/${data.subjectName}`}>
             <button className='btn btn-outline-secondary'>Explore Another {data.subjectName} Topic</button>
             </a>
           </section>  
           <section>
-
           <h2>Resources:</h2>
-          <div className='containter'>
+          <div>
+              <a href={`/topics/${data.subjectName}/${data.topicName}/${data.topicId}/resources/new`}>
+              <button className='button'>Share a New Resource</button>
+              </a>
+          </div>
+          <div className='containter'> 
             <div className='row'>
             {resourcesFormatted} 
             </div>
          </div>
-        <div>
-            <a href={`/topics/${data.subjectName}/${data.topicName}/${data.topicId}/resources/new`}>
-              <button className='button'>Share a New Resource</button>
-            </a>
-        </div>
                      
           </section>        
             </main>
