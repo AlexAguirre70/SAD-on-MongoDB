@@ -1,13 +1,11 @@
-import React,{useState} from 'react' 
+import React from 'react' 
 const Def = require('../default')
-
 
 function showTopicRes (data) {
   let resourcesFormatted = data.resources.map((resources)=>{
   
     return(
-
-        <div className='m-1 border border-dark col-sm-3 rounded' key={resources.resources_id}>
+        <div className='container m-1 border border-dark col-sm-3 rounded' key={resources.resources_id}>
             <h5>{resources.resources_name}</h5>
             <p><strong>Resource Type:</strong> {resources.resources_type}</p>
             <p><a href={`${resources.resources_link}`}>{resources.resources_link}</a>
@@ -20,7 +18,7 @@ function showTopicRes (data) {
               </form>    
         </div>
   ) 
-  })
+})
     return ( 
       <Def>
           <head>
@@ -43,8 +41,9 @@ function showTopicRes (data) {
           </section>        
           <section>
             <h2>Add Resource Form:</h2>
+            
             <div className='container'>
-            <form method='POST' action={`/topics/${data.subjectName}/${data.topicName}/${data.topicId}/resources/`}>
+            <form>
             <div className='row'>    
                 <div className='form-group col-sm-6'>
                     <label htmlFor='resources_name'>Resource Name</label>
@@ -65,8 +64,8 @@ function showTopicRes (data) {
                  <input className='form-control'  id='resources_topic_id' name='resources_topic_id' value={data.topicId} readOnly={true}/>
                 </div>
                 <div className='form-group col-sm-6'>
-                  <label   htmlFor='resources_id'>Resources ID</label>
-                 <input  className='form-control'  id='resources_id' name='resources_id' value={0} readOnly={true}/>
+                  <label htmlFor='resources_id'>Resources ID</label>
+                 <input  className='form-control'  id='resources_id' name='resources_id'value=''/>
                 </div>
             </div>    
                 <div className='form-group'>
@@ -74,7 +73,8 @@ function showTopicRes (data) {
                 </div>
             </form>
         </div>  
-             </section>
+             
+          </section>
             </main>
       </Def>
     ) 

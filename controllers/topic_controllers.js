@@ -9,7 +9,16 @@ const topics =require('../models/topics')
 const resources =require('../models/resources')
 
 router.use(methodOverride('_method'))
-router.use(express.json())
+//test new form
+router.get('/:name/:topic/:id/resources/new', (req, res) => {
+    var subjectName=req.params.name
+    var topicName=req.params.topic
+    var topicId=req.params.id
+    db.Resources.countDocuments({resources_topic_id:req.params.id})
+    .then(maxId => {
+    res.render('resources/new',{maxId,subjectName,topicName,topicId})
+    })
+  })
 
 //find the topics for each subject into an array
 router.get('/:name', (req, res) => {
