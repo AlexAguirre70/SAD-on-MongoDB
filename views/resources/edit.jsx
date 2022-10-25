@@ -24,7 +24,15 @@ function editResource(data) {
     }
     function handleSubmit(e){
         e.preventDefault;
-        console.log(input)
+        const url = "`/topics/${data.subjectName}/${data.topicName}/${data.topicId}/resources/${data.resource.resources_id}?_method=PUT`";
+        const formData = new FormData(e.target);
+        const data = {};
+        formData.forEach((value, key) => (data[key] = value));
+        console.log(data)
+        // Submit the data.
+        //const request = new XMLHttpRequest();
+       /* request.open("POST", url);
+        request.send(formData);*/
     }
     return (
       <Def>
@@ -39,21 +47,21 @@ function editResource(data) {
             <div className='row'>    
                 <div className='form-group col-sm-6'>
                     <label htmlFor='resources_name'>Resource Name</label>
-                    <input om className='form-control' id='resources_name' name="resources_name" value={input.resources_name}  />
+                    <input onChange={handleChange} className='form-control' id='resources_name' name="resources_name" value={input.resources_name} key />
                 </div> 
                 <div className='form-group col-sm-6'>
                     <label htmlFor='resources_type'>Resource Type</label>
-                    <input className='form-control'  id='resource_type' name='resources_type' value={input.resources_type}/>
+                    <input onChange={handleChange} className='form-control'  id='resource_type' name='resources_type' value={input.resources_type}/>
                 </div>             
             </div>    
             <div className='row'>
                 <div className='form-group col-sm-6'>
                   <label   htmlFor='resources_link'>Resource Link</label>
-                 <input  className='form-control'  id='resources_link' name='resources_link' value={input.resources_link}/>
+                 <input  onChange={handleChange} className='form-control'  id='resources_link' name='resources_link' value={input.resources_link}/>
                 </div>
             </div>    
                 <div className='form-group'>
-                    <button  type='submit'  className='btn btn-primary' >Submit Changes</button>
+                    <button  onClick={handleSubmit} type='submit'  className='btn btn-primary' >Submit Changes</button>
                 </div>
             </form>
           </main>
