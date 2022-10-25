@@ -27,54 +27,27 @@ function showTopicRes (data) {
                 <link rel="stylesheet" href="../../../style.css"/>
           </head>
           <main>
+            <section>
             <h1>{data.subjectName} - {data.topicName}</h1>
             <a href={`/topics/${data.subjectName}`}>
             <button className='btn btn-outline-secondary'>Explore Another {data.subjectName} Topic</button>
             </a>
+          </section>  
           <section>
+
           <h2>Resources:</h2>
           <div className='containter'>
             <div className='row'>
             {resourcesFormatted} 
             </div>
-         </div>             
+         </div>
+        <div>
+            <a href={`/topics/${data.subjectName}/${data.topicName}/${data.topicId}/resources/new`}>
+              <button className='button'>Share a New Resource</button>
+            </a>
+        </div>
+                     
           </section>        
-          <section>
-            <h2>Add Resource Form:</h2>
-            
-            <div className='container'>
-            <form>
-            <div className='row'>    
-                <div className='form-group col-sm-6'>
-                    <label htmlFor='resources_name'>Resource Name</label>
-                    <input className='form-control' id='resources_name' name="resources_name" />
-                </div>
-                <div className='form-group col-sm-6'>
-                    <label htmlFor='resources_type'>Resource Type</label>
-                    <input  className='form-control' id='resources_type' name='resources_type' />
-                </div>             
-            </div>    
-            <div className='row'>
-                <div className='form-group col-sm-6'>
-                  <label htmlFor='resources_link'>Resource Link</label>
-                 <input className='form-control'  id='resources_link' name='resources_link'/>
-                </div>
-                <div className='form-group col-sm-6'>
-                  <label htmlFor='resources_topic_id'>Topic ID</label>
-                 <input className='form-control'  id='resources_topic_id' name='resources_topic_id' value={data.topicId} readOnly={true}/>
-                </div>
-                <div className='form-group col-sm-6'>
-                  <label htmlFor='resources_id'>Resources ID</label>
-                 <input  className='form-control'  id='resources_id' name='resources_id'value=''/>
-                </div>
-            </div>    
-                <div className='form-group'>
-                    <button type='submit'  className='btn btn-primary' >Submit Changes</button>
-                </div>
-            </form>
-        </div>  
-             
-          </section>
             </main>
       </Def>
     ) 
