@@ -86,14 +86,12 @@ router.post('/:name/:topic/:id/resources',(req,res)=>{
    res.send(`this is the PUT ROUTE and data being passed ${req.body.resources_id}` )
 })
 
-//router.PUT: render the edit page to edit a specific resource 
-
 //router.DELETE: when the delete button is clicked on the resources 
 router.delete('/:name/:topic/:id/resources/:rid',(req,res)=>{
   var subjectName=req.params.name
   var topicName=req.params.topic
   var topicId=req.params.id
-   db.Resources.findOneAndDelete({resources_id:req.params.rid})
+   db.Resources.findOneAndDelete({$and:[{resources_id:req.params.rid},{resources_topic_id:topicId}]})
    .then(
       res.redirect(`/topics/${subjectName}/${topicName}/${topicId}`)
    )
