@@ -30,7 +30,7 @@ router.put('/:name/:topic/:id/resources/:rid',(req,res)=>{
   var topicName=req.params.topic
   var topicId=req.params.id  
 
-  db.Resources.findOneAndUpdate({resources_id:req.params.rid},req.body)
+  db.Resources.findOneAndUpdate({$and:[{resources_id:req.params.rid},{resources_topic_id:topicName}]}, req.body)
    .save()
    .then(result=>{
    
@@ -67,7 +67,7 @@ router.get('/:name/:topic/:id/resources/:rid',(req,res)=>{
   
   console.log(req.params.rid)
 
-  db.Resources.findOne({resources_id:req.params.rid})
+  db.Resources.findOne({$and:[{resources_id:req.params.rid},{resources_topic_id:topicId}]})
   .then(resource=>{
       res.render('resources/edit',{resource,subjectName,topicName,topicId})
   })
