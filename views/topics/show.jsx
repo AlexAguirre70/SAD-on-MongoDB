@@ -30,7 +30,7 @@ function showTopicRes (data) {
           <section>
             <h1>{data.subjectName} - {data.topicName}</h1>
             <a href={`/topics/${data.subjectName}`}>
-            <button className='btn btn-outline-secondary'>Explore Another {data.subjectName} Topic</button>
+            <button className='btn btn-secondary'>Explore Another {data.subjectName} Topic</button>
             </a>
           </section>  
           <section>
@@ -41,7 +41,7 @@ function showTopicRes (data) {
               </a>
           </div>
           <div className='containter'> 
-            <div className='row'>
+            <div className='row d-flex justify-content-center'>
             {resourcesFormatted} 
             </div>
          </div>

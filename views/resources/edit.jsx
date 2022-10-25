@@ -16,17 +16,17 @@ function editResource(data) {
             <div className='row'>    
                 <div className='form-group col-sm-6'>
                     <label htmlFor='resources_name'>Resource Name</label>
-                    <input  className='form-control' id='resources_name' name="resources_name" defaultValue={data.resource.resources_name} key={true} />
+                    <input  className='form-control' id='resources_name' name="resources_name" defaultValue={data.resource.resources_name} key={true} required/>
                 </div> 
                 <div className='form-group col-sm-6'>
                     <label htmlFor='resources_type'>Resource Type</label>
-                    <input  className='form-control'  id='resource_type' name='resources_type' defaultValue={data.resource.resources_type} key={true}/>
+                    <input  className='form-control'  id='resource_type' name='resources_type' defaultValue={data.resource.resources_type} key={true} required/>
                 </div>             
             </div>    
             <div className='row'>
                 <div className='form-group col-sm-6'>
                   <label   htmlFor='resources_link'>Resource Link</label>
-                  <input  className='form-control'  id='resources_link' name='resources_link' defaultValue={data.resource.resources_link} key={true}/>
+                  <input  className='form-control'  id='resources_link' name='resources_link' defaultValue={data.resource.resources_link} key={true} required/>
                 </div>
                  <div className='form-group col-sm-6'>
                     <label   htmlFor='resources_id'>Resource Id</label>
@@ -43,6 +43,11 @@ function editResource(data) {
                 <button className='button' type='submit' >Submit Changes</button>
             </div>    
             </form>
+            <div>
+                    <a href={`/topics/${data.subjectName}/${data.topicName}/${data.topicId}`}>
+                    <button id='back' className='btn btn-secondary'>Go Back </button>
+                     </a>
+            </div>
           </main>
       </Def>
     )
