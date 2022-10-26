@@ -1,11 +1,11 @@
-const React = require('react') 
+import React from 'react' 
 const Def = require('../default')
 
 function showTopicRes (data) {
   let resourcesFormatted = data.resources.map((resources)=>{
+  
     return(
-    <div className='row' key={resources.resources_id}>
-        <div className='border border-dark col-sm-3 rounded'>
+        <div className='container m-1 border border-dark col-sm-3 rounded' key={resources.resources_id}>
             <h5>{resources.resources_name}</h5>
             <p><strong>Resource Type:</strong> {resources.resources_type}</p>
             <p><a href={`${resources.resources_link}`}>{resources.resources_link}</a>
@@ -17,9 +17,8 @@ function showTopicRes (data) {
                 <button type='submit' className='btn btn-outline-danger'>Delete</button>
               </form>    
         </div>
-    </div>
   ) 
-  })
+})
     return ( 
       <Def>
           <head>
@@ -28,44 +27,26 @@ function showTopicRes (data) {
                 <link rel="stylesheet" href="../../../style.css"/>
           </head>
           <main>
+          <section>
             <h1>{data.subjectName} - {data.topicName}</h1>
             <a href={`/topics/${data.subjectName}`}>
-            <button className='btn btn-outline-secondary'>Explore Another {data.subjectName} Topic</button>
+            <button className='btn btn-secondary'>Explore Another {data.subjectName} Topic</button>
             </a>
+          </section>  
           <section>
           <h2>Resources:</h2>
-          <div className='containter'>
+          <div>
+              <a href={`/topics/${data.subjectName}/${data.topicName}/${data.topicId}/resources/new`}>
+              <button className='button'>Share a New Resource</button>
+              </a>
+          </div>
+          <div className='containter'> 
+            <div className='row d-flex justify-content-center'>
             {resourcesFormatted} 
-         </div>             
+            </div>
+         </div>
+                     
           </section>        
-          <section>
-            <h2>Add Resource Form:</h2>
-            <form method='POST' action={`/topics/${data.subjectName}/${data.topicName}/${data.resources.resources_topic_id}/resources/`}>
-            <div className='row'>    
-                <div className='form-group col-sm-6'>
-                    <label htmlFor='resource_name'>Resource Name</label>
-                    <input className='form-control' id='name' name="resource_name"/>
-                </div>
-                <div className='form-group col-sm-6'>
-                    <label htmlFor='resource_type'>Resource Type</label>
-                    <input  className='form-control' id='rType' name='resource_type' />
-                </div>             
-            </div>    
-            <div className='row'>
-                <div className='form-group col-sm-6'>
-                  <label   htmlFor='resource_link'>Resource Link</label>
-                 <input className='form-control'  id='Rlink' name='resource_link'/>
-                </div>
-                <div className='form-group col-sm-6'>
-                  <label   htmlFor='resource_topic_id'>Topic ID</label>
-                 <input className='form-control'  id='resTopicId' name='resource_topic_id' defaultValue={data.topicId} readOnly={true}/>
-                </div>
-            </div>    
-                <div className='form-group'>
-                    <button type='submit'  className='btn btn-primary' >Submit Changes</button>
-                </div>
-            </form>
-             </section>
             </main>
       </Def>
     ) 
