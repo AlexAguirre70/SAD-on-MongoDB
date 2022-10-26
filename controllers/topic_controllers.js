@@ -55,7 +55,7 @@ router.get('/:name/:topic/:id/resources/new', (req, res) => {
   var subjectName=req.params.name
   var topicName=req.params.topic
   var topicId=req.params.id
-  db.Resources.findOne({resources_topic_id:5}).sort({resources_id:-1})
+  db.Resources.findOne({resources_topic_id:req.params.id}).sort({resources_id:-1})
   .then(result => {
     maxId = result.resources_id+1
   res.render('resources/new',{maxId,subjectName,topicName,topicId})
