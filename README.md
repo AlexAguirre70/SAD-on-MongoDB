@@ -85,4 +85,3 @@ error-robot provided by [TopVectors](https://www.istockphoto.com/portfolio/TopVe
 
 Developed by: [Adrian Mitre](https://github.com/Torinox89), [Travis Storie](https://github.com/TDub25) and [Alex Aguirre](https://github.com/AlexAguirre70)
 
-method='POST' action={`/topics/${data.subjectName}/${data.topicName}/${data.topicId}/resources/${data.resource.resources_id}?_method=PUT`}

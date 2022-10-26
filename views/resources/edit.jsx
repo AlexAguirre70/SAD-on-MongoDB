@@ -1,31 +1,8 @@
-import React,{useState} from'react' 
+import React from 'react' 
 const Def = require('../default')  
 
 
-function editResource(data) {
-    const [input,setInput]=useState({
-        resources_name:data.resource.resources_name,
-        resources_type:data.resource.resources_type,
-        resources_link:data.resource.resources_link,
-        resources_id: data.resource.resource_id,
-        resources_topic_id: data.topicId
-    })
-    
-    function handleChange(e){
-        const {name,value}=e.target;
-
-        setInput(prevInput =>{
-            return{
-                ...prevInput,
-                [name]:value
-            }
-        })
-
-    }
-    function handleSubmit(e){
-        e.preventDefault;
-        console.log(input)
-    }
+function editResource(data) {   
     return (
       <Def>
          <head>
@@ -33,29 +10,44 @@ function editResource(data) {
                 <link rel="stylesheet" href="../../../../../style.css"/>
           </head>
           <main>
-          <h2>Editing the {data.subjectName} {data.topicName} Resource</h2>
-                <h3>{data.resource.resources_name}</h3>
-            <form>
+          <h1>Editing the {data.topicName} Resource</h1>
+                <h2>{data.resource.resources_name}</h2>
+            <form method='POST' action={`/topics/${data.subjectName}/${data.topicName}/${data.topicId}/resources/${data.resource.resources_id}?_method=PUT`}  encType="application/x-www-form-urlencoded">
             <div className='row'>    
                 <div className='form-group col-sm-6'>
                     <label htmlFor='resources_name'>Resource Name</label>
-                    <input om className='form-control' id='resources_name' name="resources_name" value={input.resources_name}  />
+                    <input  className='form-control' id='resources_name' name="resources_name" defaultValue={data.resource.resources_name} key={true} required/>
                 </div> 
                 <div className='form-group col-sm-6'>
                     <label htmlFor='resources_type'>Resource Type</label>
-                    <input className='form-control'  id='resource_type' name='resources_type' value={input.resources_type}/>
+                    <input  className='form-control'  id='resource_type' name='resources_type' defaultValue={data.resource.resources_type} key={true} required/>
                 </div>             
             </div>    
             <div className='row'>
                 <div className='form-group col-sm-6'>
                   <label   htmlFor='resources_link'>Resource Link</label>
-                 <input  className='form-control'  id='resources_link' name='resources_link' value={input.resources_link}/>
+                  <input  className='form-control'  id='resources_link' name='resources_link' defaultValue={data.resource.resources_link} key={true} required/>
                 </div>
+                 <div className='form-group col-sm-6'>
+                    <label   htmlFor='resources_id'>Resource Id</label>
+                    <input  className='form-control'  id='resources_id' name='resources_id' defaultValue={data.resource.resources_id} key={true} readOnly={true}/>
+                 </div>
+            </div> 
+            <div className='row'>
+                <div className='form-group col-sm-6'>
+                  <label   htmlFor='resources_topic_id'>Resource Link</label>
+                  <input  className='form-control'  id='resources_topic_id' name='resources_topic_id' defaultValue={data.resource.resources_topic_id} key={true} readOnly={true}/>
+                </div>
+            </div>      
+            <div className='row' >     
+                <button className='button' type='submit' >Submit Changes</button>
             </div>    
-                <div className='form-group'>
-                    <button  type='submit'  className='btn btn-primary' >Submit Changes</button>
-                </div>
             </form>
+            <div>
+                    <a href={`/topics/${data.subjectName}/${data.topicName}/${data.topicId}`}>
+                    <button id='back' className='btn btn-secondary'>Go Back </button>
+                     </a>
+            </div>
           </main>
       </Def>
     )

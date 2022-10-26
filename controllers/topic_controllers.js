@@ -9,9 +9,9 @@ const topics =require('../models/topics')
 const resources =require('../models/resources')
 
 router.use(methodOverride('_method'))
-router.use(express.json())
 
-//find the topics for each subject into an array
+
+//Subjects - RENDER Topics Index
 router.get('/:name', (req, res) => {
   var subjectName=req.params.name
    db.Topics.find({topic_subject:req.params.name})
@@ -24,25 +24,8 @@ router.get('/:name', (req, res) => {
       res.render('error404')
     })
 })
-// router.Put this will update the record in MongoDB
-router.put('/:name/:topic/:id/resources/:rid',(req,res)=>{
-  var subjectName=req.params.name
-  var topicName=req.params.topic
-  var topicId=req.params.id  
 
-  db.Resources.findOneAndUpdate({resources_id:req.params.rid},req.body)
-   .save()
-   .then(result=>{
-   
-      res.redirect(`/topics/${subjectName}/${topicName}/${topicId}`)
-  })
-  .catch(err=>{
-    console.log(err)
-    res.render('error404')
-  })
-})
-
-//router.GET On Topic Click render the topic comments, and resources Topics SHOW View
+//Topics - RENDER Topic Details
 router.get('/:name/:topic/:id',(req,res)=>{
     var subjectName=req.params.name
     var topicName=req.params.topic
@@ -58,16 +41,43 @@ router.get('/:name/:topic/:id',(req,res)=>{
     })
 })
 
+//Resources - RENDER - ADD new form
+router.get('/:name/:topic/:id/resources/new', (req, res) => {
+  var subjectName=req.params.name
+  var topicName=req.params.topic
+  var topicId=req.params.id
+  db.Resources.countDocuments({resources_topic_id:req.params.id})
+  .then(maxId => {
+  res.render('resources/new',{maxId,subjectName,topicName,topicId})
+  })
+})
 
-// router.GET  Get the update form
+//Resources - CREATE - Resource on DB
+router.post('/:name/:topic/:id/resources',(req,res)=>{
+  var subjectName=req.params.name
+  var topicName=req.params.topic
+  var topicId=req.params.id
+  db.Resources.create(req.body)
+  .then(insert => {
+        insert.save()
+        .then(()=>{
+            res.redirect(`/topics/${subjectName}/${topicName}/${topicId}`)
+          })
+      })
+   .catch(err=>{
+      console.log(err)
+      res.render('error404')
+    })
+})    
+      
+
+//Resources - RENDER - EDIT New Form
 router.get('/:name/:topic/:id/resources/:rid',(req,res)=>{
   var subjectName=req.params.name
   var topicName=req.params.topic
   var topicId=req.params.id
-  
-  console.log(req.params.rid)
 
-  db.Resources.findOne({resources_id:req.params.rid})
+  db.Resources.findOne({$and:[{resources_id:req.params.rid},{resources_topic_id:topicId}]})
   .then(resource=>{
       res.render('resources/edit',{resource,subjectName,topicName,topicId})
   })
@@ -77,16 +87,24 @@ router.get('/:name/:topic/:id/resources/:rid',(req,res)=>{
   })
 })
 
-//router.POST: On click Add Resource form - add to the database
-router.post('/:name/:topic/:id/resources',(req,res)=>{
+// Resources - UPDATE Database with form data
+router.put('/:name/:topic/:id/resources/:rid',(req,res)=>{
   var subjectName=req.params.name
   var topicName=req.params.topic
-  var topicId=req.params.id
-    
-   res.send(`this is the PUT ROUTE and data being passed ${req.body.resources_id}` )
+  var topicId=req.params.id  
+  console.log(req.body)
+  db.Resources.findOneAndUpdate({$and:[{resources_id:req.params.rid},{resources_topic_id:topicId}]}, req.body)
+   .then(result=>{
+   
+      res.redirect(`/topics/${subjectName}/${topicName}/${topicId}`)
+  })
+  .catch(err=>{
+    console.log(err)
+    res.render('error404')
+  })
 })
 
-//router.DELETE: when the delete button is clicked on the resources 
+//Resources - DELETE router.DELETE
 router.delete('/:name/:topic/:id/resources/:rid',(req,res)=>{
   var subjectName=req.params.name
   var topicName=req.params.topic
@@ -104,4 +122,9 @@ router.delete('/:name/:topic/:id/resources/:rid',(req,res)=>{
 router.get('/*', (req, res) => { 
   res.render('error404')
 })
+<<<<<<< HEAD
 module.exports = router
+=======
+
+module.exports = router
+>>>>>>> refs/remotes/origin/travisbranch
