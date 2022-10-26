@@ -40,7 +40,7 @@ function editResource(data) {
                 </div>
             </div>      
             <div className='row' >     
-                <button className='button' type='submit' >Submit Changes</button>
+                <button id="editBtn" className='button' type='submit' >Submit Changes</button>
             </div>    
             </form>
             <div>
