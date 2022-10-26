@@ -10,7 +10,16 @@ const resources =require('../models/resources')
 
 router.use(methodOverride('_method'))
 
-
+/*test route to query the database and check the data being returned
+router.get('/test', (req,res)=>{
+  db.Resources.findOne({resources_topic_id:5}).sort({resources_id:-1})
+  .then(result=>{
+    console.log(result)
+    maxId = result.resources_id+1
+    res.send(`this is the result ${result.resources_id} is last resources_Id The next is ${maxId}`)
+  })
+})
+*/
 //Subjects - RENDER Topics Index
 router.get('/:name', (req, res) => {
   var subjectName=req.params.name
@@ -46,8 +55,9 @@ router.get('/:name/:topic/:id/resources/new', (req, res) => {
   var subjectName=req.params.name
   var topicName=req.params.topic
   var topicId=req.params.id
-  db.Resources.countDocuments({resources_topic_id:req.params.id})
-  .then(maxId => {
+  db.Resources.findOne({resources_topic_id:req.params.id}).sort({resources_id:-1})
+  .then(result => {
+    maxId = result.resources_id+1
   res.render('resources/new',{maxId,subjectName,topicName,topicId})
   })
 })
