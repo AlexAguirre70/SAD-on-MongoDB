@@ -1,38 +1,43 @@
-//TOPICS INDEX PAGE VIEW
-const React = require('react')  //This includes the React middleware to render views via the server
+const React = require('react') 
+const Def = require('../default')
 
-const Def = require('../default') //This includes the default html views frameworks
+function showTopic (data) {
+    let topicsFormatted = data.Topic.map((topic)=>{
+      return(
 
-function index (data) {
-    let topicsFormatted = data.topics.map((topic) => {
-      return (
-      <div className='col-sm-6'>
-        <div>
-          <h2>{topic.name}</h2>
-          <p className="text-center">
-            {topic.subtopic1}
-          </p>
-          <p className="text-center">
-            {topic.subtopic2}
-          </p>
-          <img src={topic.pic} alt={topic.name}/>
-        </div>
+      <div className='col-sm' key={topic.topic_id}>
+       <a href={`/topics/${topic.topic_subject}/${topic.topic_name}/${topic.topic_id}`}>
+        <button className='button'>
+        {topic.topic_name} 
+        </button>
+      </a>
       </div>
-      )
+    ) 
     })
+   
     return (
       <Def>
           <main>
-              <h1>TOPIC INDEX PAGE</h1>
+            <div className='container'>
               <div className='row'>
-              {topicsFormatted}
-              </div>
-          </main>
+                <div className='col-sm-2'>
+                 <img src='/images/senior-soft-dev.jpg' id='Senior'alt='Senior Software Developer'/> 
+                </div>
+                <div className='col-sm-8'>
+                <h2>Let's share Resources about </h2>
+                <h1><strong>{data.subjectName}</strong></h1>
+                <h3>Choose a Topic Below</h3>
+                </div> 
+               </div>
+            </div>               
+            <div className='container'>
+              <div className='row'>
+                {topicsFormatted}
+              </div> 
+            </div>
+            </main>
       </Def>
-  )
+    )
   }
-  
-  module.exports = index  //This makes the view detail index page available 
-  
 
-  
+module.exports = showTopic 
