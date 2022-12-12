@@ -1,0 +1,25 @@
+@use 'config';
+form {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  label {
+    font-weight: config.$semi-bold;
+    margin-bottom: 5px;
+  }
+  input {
+    margin-bottom: config.$default-margin;
+    &.form-control, textarea:valid {
+    
+        border-color: config.$primary-color-orange;
+        border-style: solid;
+        border-width: 1px;
+    }
+    &[type=submit] {
+        background-color: config.$primary-color-orange;
+        width: 200px;
+        padding:10px;
+        font-weight: config.$semi-bold;
+        border-color: black;
+    } 
+  }
