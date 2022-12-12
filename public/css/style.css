@@ -1,145 +1,33 @@
-
-/*Simply added code from a previous exercise until we get more components to reference for CSS*/
-
-h1 {
-    text-align: center;
-    color: #ff6c2c;
-    margin-top: 15px;
-  }
- 
-h2 {
-    text-align: center;
-    color: #696969;
-    margin-top: 15px;
-  }
-h5 {
-    padding: 10px;
-  }
 button {
-    font-size: 1em;
-    font-weight: 500;
-    padding: 10px;
-    background-color: #ff6c2c;
-    color: white;
-    border-color: black;
-    border-radius: 8px;
-    width: 250px;
-    margin:10px;
-
+  font-size: 1em;
+  font-weight: 600;
+  padding: 10px;
+  background-color: #ff6c2c;
+  color: white;
+  border-color: black;
+  border-radius: 8px;
+  width: 250px;
+  margin: 15px;
 }
 button:hover {
-    background-color: white;
-    color: #ff6c2c;
+  background-color: white;
+  color: #ff6c2c;
 }
 
-div, p {
-    text-align: center;
+h1 {
+  text-align: center;
+  color: #ff6c2c;
+  margin-top: 15px;
 }
 
-img {
-    width: 125px;
-    height: 125px;
-    margin: 20px;
-}
-#Senior {
-    width: 150px;
-    height: 150px;
-    margin: 20px;
-}
-nav {
-    background-color: #ff6c2c;
-    padding: 10px;
-    text-align: center;
+h2 {
+  text-align: center;
+  color: #696969;
+  margin-top: 15px;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
+h5 {
+  padding: 10px;
 }
 
-nav li {
-    display: inline;
-    margin-right: 25px;
-}
-
-nav a {
-    color: white;
-    font-size: 1.5em;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color: #ff6c2c;
-    text-decoration: none;
-    background-color: white;
-}
-  main {
-    text-align: center;
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-top: 0px;
-    background-color: white;
-  }
-  form {
-    padding: 20px;
-    border-radius: 10px;
-  }
-  label {
-    font-weight: 600;
-    margin-bottom: 5px;
-  }
-  input {
-    margin-bottom: 15px;
-  }
-input.form-control, textarea:valid {
-    
-    border-color: #ff6c2c;
-    border-style: solid;
-    border-width: 1px;
-} 
-input[type=submit] {
-    background-color:#ff6c2c;
-    width: 200px;
-    padding:10px;
-    font-weight: 600;
-    border-color: black;
-}
-
-#resBtn {
-    padding: 5px;
-    max-height: 40px;
-    font-weight: 600;
-    margin: auto;
-
-}
-#editBtn {
-    
-    width: 250px;
-    padding: 5px;
-    max-height: 40px;
-    font-weight: 600;
-    margin: auto;
-
-}
-
-#delBtn {
-    padding: 5px;
-    max-height: 40px;
-    font-weight: 600;
-    margin: auto;
-
-}
-#addBtn, #resBtn, #saveBtn {
-    margin-bottom: 20px;
-}
-.borderbox{
-    display: inline-flex;
-    margin:10px;
-    background-color: whitesmoke;
-    padding: 10px;
-    border-color: #ff6c2c;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 8px;
-    width: 30%;
-}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,17 @@
+@use 'config';
+
+button {
+    font-size: 1em;
+    font-weight: config.$semi-bold ;
+    padding: 10px;
+    background-color: config.$primary-color-orange;
+    color: config.$teritary-color-white;
+    border-color: black;
+    border-radius: 8px;
+    width: 250px;
+    margin:config.$default-margin;
+    &:hover{
+        background-color: config.$teritary-color-white;
+        color: config.$primary-color-orange;
+    }
+}

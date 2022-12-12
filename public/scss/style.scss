@@ -1,4 +1,20 @@
 @use 'btnConfig';
 @use 'formConfig';
 @use 'navConfig';
+@use 'config';
+
+h1 {
+    text-align: config.$default-text-align;
+    color: config.$primary-color-orange;
+    margin-top: config.$default-margin;
+  }
+ 
+h2 {
+    text-align: config.$default-text-align;
+    color: config.$secondary-color-grey;
+    margin-top: config.$default-margin;
+  }
+h5 {
+    padding: 10px;
+  }
 
