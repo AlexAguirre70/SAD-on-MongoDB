@@ -1,0 +1,25 @@
+@use 'config';
+
+nav {
+    background-color: config.$primary-color-orange;
+    padding: 10px;
+    text-align: config.$default-text-align;
+    ul {
+        list-style-type: config.$default-text-decoration;
+        li{
+            display: inline-flex;
+            align-items: config.$default-text-align;
+            margin-right: 10px;
+        }
+        a {
+            color:config.$teritary-color-white;
+            font-size: 1.5em;
+            text-decoration: config.$default-text-decoration;
+            &:hover{
+                color: config.$primary-color-orange;
+                text-decoration: config.$default-text-decoration;
+                background-color: config.$teritary-color-white;
+            }
+        }
+    }
+}

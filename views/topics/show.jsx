@@ -24,7 +24,7 @@ function showTopicRes (data) {
           <head>
                 <title>SAD-on-MongoDB</title>
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
-                <link rel="stylesheet" href="../../../style.css"/>
+                <link rel="stylesheet" href="../../../css/style.css"/>
           </head>
           <main>
           <section>

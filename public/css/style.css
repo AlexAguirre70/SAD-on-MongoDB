@@ -14,6 +14,30 @@ button:hover {
   color: #ff6c2c;
 }
 
+nav {
+  background-color: #ff6c2c;
+  padding: 10px;
+  text-align: center;
+}
+nav ul {
+  list-style-type: none;
+}
+nav ul li {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+}
+nav ul a {
+  color: white;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+nav ul a:hover {
+  color: #ff6c2c;
+  text-decoration: none;
+  background-color: white;
+}
+
 h1 {
   text-align: center;
   color: #ff6c2c;
@@ -26,8 +50,30 @@ h2 {
   margin-top: 15px;
 }
 
+h3 {
+  text-align: center;
+  margin-top: 15px;
+}
+
 h5 {
   padding: 10px;
+}
+
+.container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.borderbox {
+  display: inline-flex;
+  margin: 15px;
+  background-color: white;
+  padding: 10px;
+  border-color: #ff6c2c;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  width: 30%;
 }
 
 /*# sourceMappingURL=style.css.map */

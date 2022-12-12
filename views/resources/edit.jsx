@@ -7,7 +7,7 @@ function editResource(data) {
       <Def>
          <head>
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
-                <link rel="stylesheet" href="../../../../../style.css"/>
+                <link rel="stylesheet" href="../../../../../css/style.css"/>
           </head>
           <main>
           <h1>Editing the {data.topicName} Resource</h1>

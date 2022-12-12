@@ -13,8 +13,28 @@ h2 {
     text-align: config.$default-text-align;
     color: config.$secondary-color-grey;
     margin-top: config.$default-margin;
-  }
+}
+h3{
+    text-align: config.$default-text-align;
+    margin-top: config.$default-margin;
+
+}    
+  
 h5 {
     padding: 10px;
   }
-
+.container {
+    text-align: config.$default-text-align;
+    margin-bottom: config.$default-margin;
+}
+.borderbox{
+    display: inline-flex;
+    margin:config.$default-margin;
+    background-color: config.$teritary-color-white;
+    padding: 10px;
+    border-color: config.$primary-color-orange;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+    width: 30%;
+}
