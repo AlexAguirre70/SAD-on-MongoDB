@@ -1,0 +1,101 @@
+”Re-installed node modules2”
+”Re-installed node modules”
+”corrected the Procfie path”
+”reinstalled the express react views”
+”removed the Heroku Post build script”
+”Added the Heroku Post build script”
+”fixed the production Module Not Found Error”
+”fixed the DB connection string”
+”changed port to 8000”
+”removed space on Procfile”
+”Added the heroku Procfile”
+”Merge branch 'main' of https://github.com/AlexAguirre70/SAD-on-MongoDB”
+”corrected the password”
+”Merge pull request #23 from AlexAguirre70/alexbranch”
+”Merge branch 'main' into alexbranch”
+”Added peer dependencies”
+”Update .env”
+”Update .env”
+”Update .env”
+”fixed the new form route to provide the next unique  resource Id v2.0”
+”fixed the new form route to provide the next unique  resource Id”
+”Merge pull request #21 from AlexAguirre70/alexbranch”
+”Fixed the add new from id”
+”Merge pull request #19 from AlexAguirre70/alexbranch”
+”add back buttons for forms and some styling”
+”able to Create and Edit the MongoDB via edit and new forms”
+”Merge pull request #17 from AlexAguirre70/alexbranch”
+”udpated the show route and added the express urlencoded to main index.js”
+”created the new view form to pre-populate values”
+”updated changes to the controller”
+”Merge pull request #16 from AlexAguirre70/alexbranch”
+”corrected the delete method to find by 3 fields”
+”Merge pull request #15 from AlexAguirre70/alexbranch”
+”fixing the form not passing data using the POST methond”
+”Merge pull request #14 from AlexAguirre70/alexbranch”
+”Updated the del ane edit routes”
+”Merge pull request #13 from AlexAguirre70/alexbranch”
+”added the delete function”
+”created the edit form and populated the data with controller”
+”connected the edit resources route to show view”
+”Merge pull request #12 from AlexAguirre70/alexbranch”
+”updated the controller, css,index view”
+”Update topic_controllers.js”
+”Update comments.js”
+”Update subjects.js”
+”Update resources.js”
+”Update topics.js”
+”Update subjects.js”
+”Update topic_controllers.js”
+”Update comments.js”
+”Update resources.js”
+”Update subjects.js”
+”Update topics.js”
+”Update subjects.js”
+”edited the models files”
+”testing the get topics query”
+”Merge pull request #9 from AlexAguirre70/alexbranch”
+”modifed the show,default topic_controller. Data is being accessed”
+”updated the main index.js,default.js, and added images”
+”Uploaded images and added links to README”
+”Merge branch 'travisbranch' of https://github.com/AlexAguirre70/SAD-on-MongoDB into alexbranch”
+”Merge pull request #8 from AlexAguirre70/alexbranch”
+”merged Adrians code with mine”
+”Merge branch 'adrianbranch' into alexbranch”
+”Another formac to correct the header on collection”
+” add more formatting”
+”Merge pull request #7 from AlexAguirre70/travisbranch”
+”Merge branch 'main' into travisbranch”
+”formatting README”
+”Merge pull request #6 from AlexAguirre70/alexbranch”
+”Merge branch 'main' into adrianbranch”
+”Merge pull request #4 from AlexAguirre70/alexbranch”
+”Edited .env for MongoDB”
+”Style CSS changes”
+”adding styles to SAD App”
+”topics page showing  mock data from topic controllers”
+”Mock data, Topics data array: added on the topic controllers”
+”SAD app display on browser. Test routes wiht Postman get ('/'), /topics. error400 are working. Then requere Router working at get(/). Expected: to show all list of topics”
+”Port listening: setup”
+”Index added: set up of express (views, engine, satic), app use, get rendering home an er ror404”
+”Views: Home page Added”
+”resources: error404 added”
+”topics: error404 added”
+”views: error404.js added”
+”Merge branch 'main' into alexbranch”
+”removed the .env file temporarily”
+”corrected the README file for proper MongoDB terms and created”
+”Update .env”
+”Merge pull request #2 from AlexAguirre70/alexbranch”
+”Finished the README file”
+”created my branch”
+”Added boilerplate CSS code until we get further along”
+”Added comments and resources models”
+”Edited .env file for MongoDB connection”
+”Merge pull request #1 from AlexAguirre70/travisbranch”
+”default view added”
+”Added index.js code”
+”added the files stubs inside the folders”
+”Deleted test branch file”
+”Branch test”
+”created root files and wireframe folders”
