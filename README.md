@@ -86,4 +86,4 @@ error-robot provided by [TopVectors](https://www.istockphoto.com/portfolio/TopVe
 Developed by: [Adrian Mitre](https://github.com/Torinox89), [Travis Storie](https://github.com/TDub25) and [Alex Aguirre](https://github.com/AlexAguirre70)
 
 # Changelog
-[changelog.txt]
+[Changelog](./changelog.txt)
